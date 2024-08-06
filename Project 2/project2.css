@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+/* ....utility classes.... */
+.container{
+    max-width: 900px;
+    width: 90%;
+    margin: auto;
+}
+h1{
+    text-transform: uppercase;
+}
+.btn{
+    display: inline-block;
+    padding: 1em 2.5em;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.btn-primary{
+    color: #fff;
+    background: #16a083;
+}
+.btn-primary:hover{
+    background: #0d5848;
+    transition: background .3s ease-in;
+}
+.heading{
+    font-weight: 400;
+    color: #555;
+    font-size: 3rem;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* .........navbar styling......... */
+
+/* ....for desktop mode.... */
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    opacity: .85;
+    z-index: 999;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    
+}
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+.menu-items{
+order: 2;
+display: flex;
+}
+.menu-items li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+}
+.logo{
+    order: 1;
+    font-size: 3rem;
+}
+.navbar a{
+    color: #444;
+    font-weight: 500;
+    transition: color .3s ease-in-out;
+}
+.navbar a:hover{
+    color: #117964;
+}
+
+/* ......showcase styling...... */
+
+.showcase-area{
+    height: 50vh;
+    background:linear-gradient(rgba(240,240,240,.144), rgba(255,255,255,.336)) , url("./img/header-image2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.showcase-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.6rem;
+}
+/* .......about styling....... */
+
+#about{
+    padding: 50px 0 ;
+    background: #f5f5f7;
+    /* margin-top: 8rem; */
+}
+.about-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+#about h2{
+    font-size: 3.2rem;
+}
+#about p{
+    font-size: 1.6rem;
+    color: #555;
+}
+#about .small{
+    font-size: 1.6rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.about-txt{
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;
+    transform: translateX(-150%);
+    animation: about-txt-animation 1s  ease-in-out forwards;
+    }
+.about-img{
+    flex: 1 1 400px;
+    padding: 30px;
+    transform: translateX(150%);
+    animation: about-img-animation 1s  ease-in-out forwards;
+}
+.about-img img{
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: right;
+}
+@keyframes about-txt-animation{
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes about-img-animation{
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/* .......food types styling....... */
+#food{
+    padding: 5rem 0 7rem 0;
+}
+.food-container{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+   /*  margin-bottom: 2rem; */
+}
+.food-container img{
+    display: block;
+    width: 100%;
+    margin: auto;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+.img-container{
+    margin: 0 .8rem;
+    position: relative;
+}
+
+.img-content{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    opacity: 0;
+    transition: all .2s ease-in-out .1s;
+}
+.img-container h3{
+    color: #fff;
+    font-size: 3rem;
+}
+.img-container a{
+    font-size: 1.2rem;
+}
+.img-container::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .871);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* opacity: 0; */
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all .3s ease-in-out;
+}
+.img-container:hover::after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+.img-container:hover .img-content{
+    opacity: 1;
+    top: 50%;
+}
+
+/* ........food menu styling........ */
+
+.food-menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 0 15px 0 ;
+}
+.food-menu-item{
+    display: flex;
+    flex: 1 1 450px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+.food-menu-item .food-image img{
+    display: block;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.food-description{
+    margin: auto 1.5rem;
+}
+.food-title{
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #444;
+}
+.food-description p{
+    font-size: 1.4rem;
+    color: #555;
+    font-weight: 500;
+}
+.food-description .food-price{
+    color: #117964;
+    font-weight: 700;
+}
+
+
+/* ......testimonial styling...... */
+#testimonial{
+    /* margin: 1.5rem 0; */
+    padding: 6rem 0rem;
+    background: rgb(243, 243, 243);
+}
+.checked{
+color: #ff9529;
+}
+.testimonial-container{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding: 1rem;
+    
+}
+.testimonial-box .testimonial-text{
+    margin: 1rem 0;
+    color: #444;
+}
+.testimonial-box{
+    text-align: center;
+    padding: 1rem;
+}
+.customer-photo img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: auto;
+}
+
+/* ........contact us styling........ */
+
+#contact{
+    padding: 5rem 0;
+    background: rgb( 226, 226, 226);
+}
+.contact-container{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
+    background: #fff;
+}
+.form-container{
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+}
+.form-container,
+.contact-img{
+    /* flex: 1 1 400px; */
+    width: 50%;
+}
+
+.form-container h2{
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #444;
+}
+.form-container input,
+.form-container #comment{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+    box-shadow: none;
+    outline: none;
+    margin-bottom: 1rem;
+    color: #444;
+    font-weight: 500;
+}
+.form-container a{
+    font-size: 1.2rem;
+}
+.contact-img img{
+    display: block;
+    width: 100%;
+    /* height: 100%; */
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ......footer styling...... */
+
+#footer h2{
+padding: 3rem;
+background: rgb(65, 65, 65);
+color: #fff;
+font-size: 2rem;
+font-weight: 500;
+text-align: center;
+}
+
+
+/* ###### media queries ###### */
+
+/* ........navbar queries........ */
+@media (max-width: 768px){
+    /* ...desktop first approach... */
+
+.navbar{
+    opacity: .95;
+}
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: block;
+}
+.navbar-container{
+    display: block;
+    position: relative;
+    height: 64px;
+}
+
+.navbar input[type="checkbox"]{
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 32px;
+    top: 20px;
+    left: 24px;
+    z-index: 5;
+    opacity: 0;
+}
+.navbar-container .hamburger-lines{
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 32px;
+    top: 20px;
+    left: 24px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.navbar-container .hamburger-lines .line{
+    display: block;
+    background: #333333;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+}
+.navbar-container .hamburger-lines .line1{
+    transform-origin: 0% 0%;
+    transition: tranform .4s ease-in-out;
+}
+.navbar-container .hamburger-lines .line3{
+    transform-origin: 0% 100%;
+    transition: tranform .4s ease-in-out;
+}
+.navbar-container .hamburger-lines .line2{
+    transition: transform .4 ease-in-out;
+}
+.navbar .menu-items{
+    padding-top: 100px;
+    background: #fff;
+    height: 100vh;
+    max-width: 300px;
+    transform: translateX(-150%);
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
+    transition: transform .5s ease-in-out;
+    box-shadow: 5px 8px 10px 0px #aaa;
+}
+.navbar .menu-items li{
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.navbar .navbar-container .logo{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 3rem;
+}
+.navbar-container input[type="checkbox"]:checked ~ .menu-items{
+    transform: translateX(0%);
+}
+.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+    transform: rotate(45deg);
+}
+.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+    transform: rotate(-45deg);
+}
+.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+    transform: scaleY(0);
+}
+
+/* .....food type querie..... */
+
+.food-container{
+    flex-direction: column;
+    align-items: stretch;
+    /* justify-content: space-between; */
+}
+.food-type:not(:last-child){
+    margin-bottom: 3rem;
+}
+.food-type{
+    box-shadow: 5px 5px 10px 0px #aaa ;
+}
+.img-container{
+    margin: 0;
+}
+}
+/* ####for small screen#### */
+@media (max-width:500px){
+    html{
+        font-size: 50%;
+    }
+    .navbar .navbar-container .logo{
+        font-size: 4em;
+    }
+    .testimonial-container{
+        flex-direction: column;
+        text-align: center;
+    }
+    .food-menu-item{
+        flex-direction: column;
+        text-align: center;
+    }
+    .food-menu-container img{
+        margin: auto;
+    }
+    .form-container{
+        width: 90%;
+    }
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-img{
+        width: 90%;
+        margin: 3rem auto;
+    }
+}
+
+/* #######for landscape mode####### */
+@media (Orientation: landscape) and (max-height: 500px){
+    .showcase-area{
+     height: 50vmax;
+    }
+}
